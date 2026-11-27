@@ -21,7 +21,7 @@ There are two ways to contribute:
 | What you want to change | Where it is |
 | - | - |
 | Year, dates, city, edition numbers | `src/_data/site.yaml` |
-| The text of a page | the page's Markdown file in `src/` |
+| The text of a page | the page's Markdown file in `src/pages/`, such as `src/pages/venue.md` |
 | Committees, important dates, accepted papers | the YAML files in `src/_data/` |
 | Images and logos | `src/images/` |
 | PDFs (calls, forms, sponsorship) | `src/resources/` |
@@ -52,10 +52,19 @@ request lets the build catch mistakes before they go live.
 
 ### Links between pages
 
-Link to another page of this site with a relative path, such as
-`[Venue](venue/)`. Never start the link with `/`: the site lives under
-`/2028/`, and `/venue/` would point to the EDBT/ICDT organisation's own
-site instead.
+Each page in `src/pages/` becomes one page of the site with the same name:
+`src/pages/venue.md` becomes `venue.html`. Link to it by that name, such as
+`[Venue](venue.html)`, and to images and PDFs the same way, such as
+`[Call for papers](resources/cfp.pdf)`. Never start a link with `/`: the site
+lives under `/2028/`, and `/venue.html` would point to the EDBT/ICDT
+organisation's own site instead.
+
+### Adding a page to the menu
+
+Add the page's name, without `.md`, to `src/_data/menu.yaml`, under the
+group it belongs to. The menu shows the page's `menu_label`, or its `title`
+if it has none. A name with no page behind it stops the build, and the
+error message names it.
 
 ## Working on the site locally
 
