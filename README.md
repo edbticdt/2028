@@ -13,7 +13,8 @@ the table was generated: confirm or correct them, then drop the mark.
 | - | - | - | - |
 | `docs/` | doc | maintainer | not published: listed in `.pagesignore` |
 | `README.md` | doc | maintainer | not published: listed in `.pagesignore` |
+| `CONTRIBUTING.md` | doc | maintainer | how to edit content and work on the site; not published: listed in `.pagesignore` |
 | `INFO.md` | doc | maintainer | draft conference copy, to be reworked into the site; not published: listed in `.pagesignore` |
 
-How to work on the site is in `docs/`: `voice.md` for the copy, `design.md` for
+To edit content or work on the site, start with [CONTRIBUTING.md](CONTRIBUTING.md). More detail is in `docs/`: `voice.md` for the copy, `design.md` for
 styles and components, `adding-content.md` for new pages and entries.
