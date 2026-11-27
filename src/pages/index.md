@@ -1,5 +1,6 @@
 ---
 title: Home
+menu_label: EDBT/ICDT 2028
 ---
 
 # {{ site.name }}

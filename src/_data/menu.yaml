@@ -1,0 +1,12 @@
+# The menu, in groups. Each item is a page key: the file name in src/pages/
+# without ".md". A key with no page stops the build.
+#
+# An item can also be written with its own label, or as an external link:
+#   - { page: venue, label: Conference Venue }
+#   - { label: LinkedIn, url: "https://www.linkedin.com/company/edbt-icdt-conference/" }
+#
+# Without a label, the menu uses the page's "menu_label" or "title" field.
+
+- group: General Information
+  items:
+    - index

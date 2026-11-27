@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- if key == "index" %}
+  <title>{{ site.name }} - {{ site.dates }} - {{ site.city }}, {{ site.country }}</title>
+  {%- else %}
+  <title>{{ title }} - {{ site.short_name }}, {{ site.city }}</title>
+  {%- endif %}
+  <meta name="description" content="{{ description or site.description }}">
+  {%- if site.favicon %}
+  <link rel="icon" href="images/{{ site.favicon }}">
+  {%- endif %}
+  <link rel="stylesheet" href="css/droidserif.css">
+  <link rel="stylesheet" href="css/opensans.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body id="top">
+  <div class="page_margins schatten">
+    <div class="page">
+      {% include "partials/header.njk" %}
+      <div id="main">
+        <nav id="col1" aria-label="Site menu">
+          <div id="col1_content" class="clearfix">
+            {% include "partials/menu.njk" %}
+          </div>
+        </nav>
+        <main id="col3">
+          <div id="col3_content" class="clearfix">
+            {{ content | safe }}
+            {%- if site.cmt_acknowledgement %}
+            <p class="cmt-acknowledgement">{{ site.cmt_acknowledgement }}</p>
+            {%- endif %}
+          </div>
+          <div id="ie_clearing">&#160;</div>
+        </main>
+      </div>
+    </div>
+  </div>
+  <a id="return-to-top" href="#top" aria-label="Back to top">&uarr;</a>
+</body>
+</html>

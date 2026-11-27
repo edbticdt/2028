@@ -1,0 +1,20 @@
+{%- set key_of_page = key %}
+{% for group in menu %}
+<h6 class="vlist">{{ group.group }}</h6>
+<ul class="vlist">
+  {%- for item in group.items %}
+  {%- if item.url %}
+  <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+  {%- else %}
+  {%- set key = item.page if item.page else item %}
+  {%- set target = collections.pages | pageByKey(key) %}
+  {%- set label = item.label or target.data.menu_label or target.data.title %}
+  {%- if target.data.key == key_of_page %}
+  <li class="active"><span aria-current="page">{{ label }}</span></li>
+  {%- else %}
+  <li><a href="{{ target.data.key }}.html">{{ label }}</a></li>
+  {%- endif %}
+  {%- endif %}
+  {%- endfor %}
+</ul>
+{% endfor %}
