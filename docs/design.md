@@ -166,7 +166,8 @@ changed.
 - Data: name, dates, city, logos from `src/_data/site.yaml`.
 - The conference logo on the left and the host university's on the right
   have slots of the same width (`--logo-width`, `--host-logo-width`, both
-  220px), so the title is centred. The host slot is kept, empty, until
+  220px), so the title is centred. The host logo fills 80% of its slot
+  (`--host-logo-scale`), against the right edge. The host slot is kept, empty, until
   `host_logo` is set; on phones, where the header stacks, an empty slot is
   hidden.
 

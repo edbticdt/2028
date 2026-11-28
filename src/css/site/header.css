@@ -14,7 +14,14 @@
 /* The host university's logo, on the right. The slot keeps its width even
    while empty (.header-host--empty), so the title stays centred. */
 .header-host { display: block; flex: 0 0 var(--host-logo-width); }
-.header-host img { display: block; max-width: 100%; height: auto; }
+/* The logo itself at 80% of the slot (176px of 220px), against the right
+   edge: university logos read heavier than the conference logo. */
+.header-host img {
+  display: block;
+  max-width: var(--host-logo-scale);
+  height: auto;
+  margin-left: auto;
+}
 
 .header-title { flex: 1; text-align: center; }
 
