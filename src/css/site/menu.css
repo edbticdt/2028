@@ -1,31 +1,15 @@
-/* The menu, on top of ../yaml/nav_vlist.css: lighter group titles and
-   dividers, a little more room per entry. */
+/* The menu: the framework's look from the 2026 and 2027 sites
+   (../yaml/nav_vlist.css), in this site's fonts and sizes. */
 
-/* The whole menu in the heading font, a size below the text. */
 .vlist,
-h6.vlist { font-family: var(--font-heading); }
+h6.vlist { font-family: var(--font-body); }
+
 .vlist { font-size: var(--text-ui); }
 
-/* Group titles: small spaced capitals, instead of bold Arial on a heavy
-   rule. */
+/* Group titles: bold, over the framework's thick grey rule, as in 2027. */
 h6.vlist {
-  padding: 1.2em 0 0.4em 10%;
-  font-size: var(--text-sm);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  border-top: 0;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.vlist { margin-bottom: 0.5em; border-bottom: 0; }
-
-.vlist a,
-.vlist li span {
-  padding-top: 0.45em;
-  padding-bottom: 0.45em;
-  border-bottom: 1px solid var(--color-rule);
+  font-size: var(--text-ui);
+  font-weight: 700;
 }
 
 .vlist a { transition: background-color 0.15s ease, color 0.15s ease; }

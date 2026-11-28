@@ -2,21 +2,26 @@
    menu column and the content column. ../yaml/basemod.css sets the desktop
    layout; this file adds the phone layout on top. */
 
-/* Desktop: a softer page shadow, a lighter divider between the columns,
-   more room around the text. */
+/* Desktop: the page is as wide as on the 2026 and 2027 sites. The framework
+   caps it at 90em, which was 1080px with its 12px text; with 16px text that
+   would be 1440px, so the cap is set in rem instead. */
+.page_margins { max-width: var(--page-max-width); }
+
+/* A softer page shadow, a lighter divider between the columns, more room
+   around the text. */
 .schatten { box-shadow: var(--shadow-page); }
 #col3 { border-left-color: var(--color-rule); }
 #col3_content { padding: 0 var(--space-l) var(--space-m) var(--space-l); }
 
 /* Phones: one column, content first, menu after it. A "Menu" link at the
    top of the page jumps to the menu (see header.css), so no script is needed
-   to open and close it. */
+   to open and close it. A strip of red stays above and below the page, and
+   the page keeps its rounded corners, as on desktop. */
 @media screen and (max-width: 48em) {
-  body { padding: 0; }
+  body { padding: var(--space-s) 0; }
 
   .page_margins {
     min-width: 0;
-    border-radius: 0;
     box-shadow: none;
   }
 
