@@ -40,11 +40,11 @@ alone, so nothing outside `src/` can be published by mistake.
 | Path | Kind | Edited by | Notes |
 | - | - | - | - |
 | `src/pages/` | content | organisers | one Markdown file per page; `venue.md` is published as `venue.html` |
-| `src/_data/` | content | organisers | `site.yaml` (edition settings), `menu.yaml`, `history.yaml` (past venues); `pkg.js` is build code |
+| `src/_data/` | content | organisers | `site.yaml` (edition settings), `menu.yaml`, `news.yaml`, `sponsors.yaml`, `history.yaml` (past venues); `pkg.js` is build code |
 | `src/images/` | content | organisers | logos in `logos/`, the cover photo in `cover/` |
 | `src/_includes/` | web | maintainer | the page layout and its parts |
 | `src/css/` | web | maintainer | `yaml/` is the inherited framework, never edited; `site/` is this site's own |
-| `src/fonts/` | web | maintainer | Space Grotesk and Source Serif 4, with their licences, served by the site itself |
+| `src/fonts/` | web | maintainer | Source Serif 4 and Fira Sans, with their licences, served by the site itself |
 | `src/humans.njk` | web | maintainer | generates `humans.txt`: team, credits, copyrights |
 | `eleventy.config.js`, `package.json`, `package-lock.json`, `.nvmrc`, `.npmrc` | web | maintainer | the build; not published |
 | `_site/` | web | nobody | the built site, generated, not in git |
