@@ -54,5 +54,5 @@
   --space-l: 30px;
 
   --logo-width: 220px;
-  --host-logo-width: 210px;
+  --host-logo-width: 220px;   /* same as --logo-width, so the title is centred */
 }

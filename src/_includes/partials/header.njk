@@ -8,8 +8,13 @@
       <p class="site-when">{{ site.dates }}</p>
       <p class="site-where">{{ site.city }}, {{ site.country }}</p>
     </div>
-    {%- if site.host_logo %}
-    <img class="header-host" src="images/{{ site.host_logo }}" alt="Host institution logo">
+    {#- The host university's logo, or its reserved place until there is one. #}
+    {%- if site.host_logo and site.host_url %}
+    <a class="header-host" href="{{ site.host_url }}"><img src="images/{{ site.host_logo }}" alt="{{ site.host_name or 'Host university' }} logo"></a>
+    {%- elif site.host_logo %}
+    <span class="header-host"><img src="images/{{ site.host_logo }}" alt="{{ site.host_name or 'Host university' }} logo"></span>
+    {%- else %}
+    <span class="header-host header-host--empty" aria-hidden="true"></span>
     {%- endif %}
   </div>
   <a class="menu-link" href="#col1">Menu &darr;</a>
