@@ -102,12 +102,14 @@ with Ctrl+C.
 | `npm start` | Builds the site and serves a live preview |
 | `npm run build` | Builds the site once into `_site/` |
 | `npm run build:pages` | Builds with the `/2028/` prefix, as the deploy does |
+| `npm run package` | Packs the site as plain, readable HTML into `dist/` (see "Releasing a version") |
 
 If the build fails, the message names the file and the problem: often a
 menu entry with no page behind it, or a YAML indentation error.
 
-Everything stays inside the repository: packages go into `node_modules/`
-and npm's download cache into `.npm-cache/`, both ignored by git. The
+Everything stays inside the repository: packages go into `node_modules/`,
+npm's download cache into `.npm-cache/`, and release packages into
+`dist/`, all ignored by git. The
 project's `.npmrc` pins exact versions and blocks package install scripts.
 Never install with `-g` or run npm with `sudo`.
 
@@ -131,6 +133,31 @@ has to maintain. Agree any new package with the maintainers first. Then
   `content(venue): add the travel directions`
 
 Keep each commit to one topic.
+
+## Releasing a version
+
+Each release attaches a zip of the whole site as **plain, readable HTML** to
+a GitHub Release: complete pages, CSS, fonts and images, with a README, and
+no Eleventy. It is for anyone who would rather edit the site by hand, now or
+years from now.
+
+Versions follow [semantic versioning](https://semver.org): `v1.0.0`, then
+`v1.1.0` for new content or features, `v1.0.1` for fixes.
+
+1. Make sure `main` is up to date and its last deploy passed.
+2. Check the package locally: `npm run package` writes
+   `dist/edbticdt-2028-site-<version>.zip` (ignored by git). Open it and
+   look.
+3. Tag the release on `main`, with a message, and push the tag:
+
+   ```sh
+   git switch main && git pull
+   git tag -a v1.0.0 -m "v1.0.0: <what this version brings>"
+   git push origin v1.0.0
+   ```
+
+4. The **Release** workflow builds the zip and creates the GitHub Release
+   with it, and its notes from the merged pull requests.
 
 ## Handing over to the next edition
 
