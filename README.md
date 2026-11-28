@@ -32,9 +32,10 @@ Details in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Assets
 
-What each path holds, who edits it, and whether it is published. Web assets
-make the site work, content assets are what it shows, and doc assets describe
-it and are never published.
+What each path holds and who edits it. Web assets make the site work,
+content assets are what it shows, and doc assets describe it. Only the built
+site, `_site/`, is published: the build takes its pages and files from `src/`
+alone, so nothing outside `src/` can be published by mistake.
 
 | Path | Kind | Edited by | Notes |
 | - | - | - | - |
@@ -47,8 +48,7 @@ it and are never published.
 | `src/humans.njk` | web | maintainer | generates `humans.txt`: team, credits, copyrights |
 | `eleventy.config.js`, `package.json`, `package-lock.json`, `.nvmrc`, `.npmrc` | web | maintainer | the build; not published |
 | `_site/` | web | nobody | the built site, generated, not in git |
-| `archive/` | doc | maintainer | source files kept for reference, such as the logo PDF; not published: outside `src/`, and listed in `.pagesignore` |
-| `docs/` | doc | maintainer | the guides; not published: listed in `.pagesignore` |
-| `README.md` | doc | maintainer | not published: listed in `.pagesignore` |
-| `CONTRIBUTING.md` | doc | maintainer | not published: listed in `.pagesignore` |
-| `index.html` (root) | web | nobody | the old placeholder page, live until the Eleventy deploy replaces it |
+| `archive/` | doc | maintainer | source files kept for reference, such as the logo PDF |
+| `docs/` | doc | maintainer | the guides |
+| `README.md`, `CONTRIBUTING.md` | doc | maintainer | this file, and how to send a change |
+| `.github/workflows/pages.yml` | web | maintainer | builds the site on every pull request, and publishes it on every push to `main` |

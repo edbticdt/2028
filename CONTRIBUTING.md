@@ -14,10 +14,18 @@ What to change for each kind of edit (a page, the menu, an image, the
 dates) is in [docs/adding-content.md](docs/adding-content.md). This file is
 about how to send the change.
 
-> **Not finished yet.** The live site is still the old placeholder page: the
-> deploy that publishes the Eleventy build, the build check on pull requests
-> and the broken-link check are still to come. Until then, check your change
-> with a local preview, or ask a maintainer to.
+## How a change goes live
+
+1. You propose the change in a pull request.
+2. GitHub builds the site from it. A failed build shows as a red cross on the
+   pull request; open **Details** to see the message, which names the file
+   and the problem. Nothing is published from a pull request.
+3. A maintainer reviews and merges it into `main`.
+4. GitHub builds the site again and publishes it, usually within a few
+   minutes.
+
+> **Not checked yet:** links inside a page's text that point to a page or
+> file that doesn't exist. The menu is checked; page text is not, so far.
 
 ## Where things are
 
@@ -47,7 +55,8 @@ repository.
    such as `content(venue): add the venue address`.
 4. Choose **Create a new branch for this commit and start a pull request**,
    then **Propose changes**, then **Create pull request**.
-5. A maintainer reviews and merges it.
+5. Wait for the build check on the pull request, then a maintainer reviews
+   and merges it.
 
 ### Adding a file (a page, an image, a PDF)
 
