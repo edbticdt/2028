@@ -15,7 +15,8 @@
 .header-title { flex: 1; text-align: center; }
 
 /* Set like the 2026 and 2027 headers, whose name was an h1 and dates and
-   city were bold h2s: the heading font, at the framework's h1 and h2 sizes.
+   city were h2s: the heading font, at the framework's h1 and h2 sizes; the
+   name semibold, the dates and city medium.
    They are paragraphs here because each page's own title is its h1. */
 .header-title p {
   margin: 0;
@@ -23,12 +24,12 @@
   color: #222;
 }
 
-.site-name { font-size: 30px; font-weight: normal; }
+.site-name { font-size: 30px; font-weight: 600; }
 .site-name a,
 .site-name a:visited { color: var(--color-heading); text-decoration: none; }
 
 .site-when,
-.site-where { margin-top: 0.25em; font-size: 24px; font-weight: bold; }
+.site-where { margin-top: 0.25em; font-size: 24px; font-weight: 500; }
 
 /* The jump to the menu, for phones only. */
 .menu-link { display: none; }
@@ -47,6 +48,7 @@
 
   .menu-link {
     display: block;
+    font-family: var(--font-heading);
     margin-top: var(--space-s);
     padding: 0.4em;
     text-align: center;
