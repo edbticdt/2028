@@ -9,10 +9,12 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
-    "build:pages": "eleventy --pathprefix=/2028/"
+    "build:pages": "eleventy --pathprefix=/2028/",
+    "package": "node tools/package-release.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "3.1.8",
-    "js-yaml": "5.5.0"
+    "js-yaml": "5.5.0",
+    "prettier": "3.10.1"
   }
 }
