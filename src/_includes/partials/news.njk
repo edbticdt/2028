@@ -1,0 +1,9 @@
+{#- News items from src/_data/news.yaml. Set "newsLimit" before including to
+    show only the first few. -#}
+<ul class="news">
+{%- for item in news %}
+{%- if not newsLimit or loop.index <= newsLimit %}
+  <li><strong>{{ item.date }}</strong> - {{ item.text | inlineLinks | safe }}</li>
+{%- endif %}
+{%- endfor %}
+</ul>

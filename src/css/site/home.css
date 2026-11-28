@@ -1,0 +1,29 @@
+/* The home page: the welcome line, sponsors, news. */
+
+/* The welcome line above the cover photo, set like the 2026 and 2027 bold
+   h3, in the heading font. */
+.welcome {
+  margin: 0.2em 0 0.8em;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  color: #222;
+}
+
+/* Sponsor logos, a row per tier, wrapping on narrow screens. */
+.sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-m) var(--space-l);
+  margin: 0 0 1.5em;
+  padding: 0;
+  list-style: none;
+}
+.sponsors li { margin: 0; }
+.sponsors img { display: block; max-height: 120px; max-width: 250px; width: auto; }
+
+/* News: one dated line each, no bullets. */
+.news { margin: 0 0 1em; padding: 0; list-style: none; }
+.news li { margin: 0 0 0.6em; }

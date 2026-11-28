@@ -1,0 +1,15 @@
+# Sponsors, shown on the home page under "We thank our Sponsors", one block
+# per tier, in this order. A tier with no sponsors is not shown. Logos go in
+# src/images/sponsors/.
+#
+#   - tier: Gold Sponsors
+#     sponsors:
+#       - name: Example Corp
+#         url: https://example.com
+#         logo: sponsors/example.svg
+
+- tier: Gold Sponsors
+  sponsors: []
+
+- tier: Local Supporters
+  sponsors: []
