@@ -10,3 +10,20 @@
 - group: General Information
   items:
     - index
+    - venue
+    - travel
+    - accommodation
+
+- group: Calls
+  items:
+    - important-dates
+    - edbt-call-for-papers
+    - icdt-call-for-papers
+
+- group: Organisation
+  items:
+    - organisers
+
+- group: Follow Us
+  items:
+    - { label: LinkedIn, url: "https://www.linkedin.com/company/edbt-icdt-conference/" }

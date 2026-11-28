@@ -1,0 +1,51 @@
+---
+permalink: humans.txt
+eleventyExcludeFromCollections: true
+---
+/* TEAM */
+{%- if site.team.length %}
+{%- for person in site.team %}
+	{{ person.role }}: {{ person.name }}
+{%- if person.site %}
+	Site: {{ person.site | safe }}
+{%- endif %}
+{%- endfor %}
+{%- else %}
+	The {{ site.short_name }} organising committee
+{%- endif %}
+	Location: {{ site.city }}, {{ site.country }}
+
+/* THANKS */
+	The EDBT/ICDT 2026 (Tampere) and 2027 (Lille) web teams, whose sites gave
+	this one its layout and stylesheets.
+{%- if site.cover %}
+	{{ site.cover.photographer }}, for the cover photo: {{ site.cover.source_url | safe }}
+{%- endif %}
+
+/* SITE */
+	Last update: {{ "" | buildDate }}
+	Language: English
+	Doctype: HTML5
+	Standards: HTML5, CSS3, WOFF2
+	Built with: Eleventy {{ pkg.devDependencies["@11ty/eleventy"] }}, js-yaml {{ pkg.devDependencies["js-yaml"] }}, Node
+	Hosted on: GitHub Pages
+	Source: https://github.com/edbticdt/2028
+	Third-party requests: none. Fonts and styles are served by this site.
+
+/* COLOPHON */
+	Body text: Open Sans, by Steve Matteson
+	Headings: Droid Serif, by Steve Matteson, for Google
+	Layout: YAML (Yet Another Multicolumn Layout) 3.3, by Dirk Jesse
+	Cover photo: {{ site.cover.photographer }}, on {{ site.cover.source }}
+
+/* COPYRIGHT */
+	Text: (c) {{ site.copyright_holder }}
+	Logo: (c) {{ site.copyright_holder }}
+{%- if site.cover %}
+	Cover photo: (c) {{ site.cover.photographer }}, {{ site.cover.licence }}, {{ site.cover.licence_url | safe }}
+{%- endif %}
+	Open Sans: (c) 2020 The Open Sans Project Authors, SIL Open Font License 1.1, fonts/OFL-open-sans.txt
+	Droid Serif: (c) Google, Apache License 2.0, fonts/LICENSE-droid-serif.txt
+	YAML framework: (c) 2005-2010 Dirk Jesse, Creative Commons Attribution 2.0, http://www.yaml.de
+	Eleventy: (c) Zach Leatherman, MIT License
+	js-yaml: (c) Vitaly Puzrin, MIT License
