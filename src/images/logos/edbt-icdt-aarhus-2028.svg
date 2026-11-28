@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000">
   <title>EDBT ICDT Aarhus 2028 conference logo</title>
   <desc>Two-color vector logo with a simplified Aarhus skyline, EDBT ICDT cross emblem, and Aarhus 2028 banner.</desc>
-  <rect width="1400" height="1000" fill="#FFFFFF"/>
   <g id="skyline" fill="#18203A" stroke="#18203A" stroke-linejoin="round">
     <rect x="92" y="680" width="1216" height="12" stroke="none"/>
     <rect x="128" y="430" width="315" height="250" stroke="none"/>
