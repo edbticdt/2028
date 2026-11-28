@@ -1,0 +1,39 @@
+/* The page frame: the white page on the red background, the header, the
+   menu column and the content column. ../yaml/basemod.css sets the desktop
+   layout; this file adds the phone layout on top. */
+
+/* Phones: one column, content first, menu after it. A "Menu" link at the
+   top of the page jumps to the menu (see header.css), so no script is needed
+   to open and close it. */
+@media screen and (max-width: 48em) {
+  body { padding: 0; }
+
+  .page_margins {
+    min-width: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .page { padding: var(--space-s) 0; }
+
+  #main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #col3 {
+    order: 1;
+    margin: 0;
+    border-left: 0;
+  }
+
+  #col1 {
+    order: 2;
+    float: none;
+    width: auto;
+    margin-top: var(--space-m);
+  }
+
+  #col1_content,
+  #col3_content { padding: 0 var(--space-s); }
+}

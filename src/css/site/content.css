@@ -1,0 +1,22 @@
+/* The content column: headings, images, tables, notes. */
+
+#col3_content h1,
+#col3_content h2 { font-weight: bold; color: var(--color-heading); }
+
+/* Images never overflow the column. */
+#col3_content img { max-width: 100%; height: auto; }
+
+.cmt-acknowledgement { margin-top: 2em; font-style: italic; }
+
+@media screen and (max-width: 48em) {
+  #col3_content h1 { font-size: 1.6em; }
+  #col3_content h2 { font-size: 1.3em; }
+
+  /* Wide tables (accepted papers, the program) scroll sideways instead of
+     widening the page. */
+  #col3_content table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}

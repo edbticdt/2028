@@ -1,0 +1,11 @@
+{#- The cover photo and its credit, from site.cover in src/_data/site.yaml. -#}
+{%- if site.cover %}
+<figure class="cover">
+  <img src="images/{{ site.cover.image }}"
+       srcset="images/{{ site.cover.image_small }} 800w, images/{{ site.cover.image }} {{ site.cover.width }}w"
+       sizes="(max-width: 48em) 100vw, 75vw"
+       width="{{ site.cover.width }}" height="{{ site.cover.height }}"
+       alt="{{ site.cover.alt }}">
+  <figcaption>Photo by <a href="{{ site.cover.photographer_url }}">{{ site.cover.photographer }}</a> on <a href="{{ site.cover.source_url }}">{{ site.cover.source }}</a></figcaption>
+</figure>
+{%- endif %}

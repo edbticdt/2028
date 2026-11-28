@@ -1,0 +1,36 @@
+/* The "back to top" button: a plain link to #top, always shown, no script. */
+
+#return-to-top {
+  position: fixed;
+  right: var(--space-m);
+  bottom: var(--space-m);
+  z-index: 10000;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 22px;
+  color: #fff;
+  text-decoration: none;
+  background: var(--color-overlay);
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+#return-to-top:hover,
+#return-to-top:focus { color: #fff; background: var(--color-overlay-strong); }
+
+@media screen and (max-width: 48em) {
+  #return-to-top {
+    right: var(--space-s);
+    bottom: var(--space-s);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+  }
+}
+
+@media print {
+  #return-to-top { display: none; }
+}

@@ -12,10 +12,18 @@
   {%- if site.favicon %}
   <link rel="icon" href="images/{{ site.favicon }}">
   {%- endif %}
-  <link rel="stylesheet" href="css/droidserif.css">
-  <link rel="stylesheet" href="css/opensans.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/site.css">
+  <link rel="author" href="humans.txt">
+  {#- Stylesheets, in order: fonts, the YAML framework, then this site's own
+      components, which override the framework. A new component file in
+      src/css/site/ is added here. #}
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/yaml/layout.css">
+  <link rel="stylesheet" href="css/site/tokens.css">
+  <link rel="stylesheet" href="css/site/frame.css">
+  <link rel="stylesheet" href="css/site/header.css">
+  <link rel="stylesheet" href="css/site/content.css">
+  <link rel="stylesheet" href="css/site/cover.css">
+  <link rel="stylesheet" href="css/site/back-to-top.css">
 </head>
 <body id="top">
   <div class="page_margins schatten">

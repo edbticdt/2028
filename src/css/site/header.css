@@ -1,0 +1,59 @@
+/* The header: conference logo, title block, host logo, in one row. */
+
+#header { padding: var(--space-s) var(--space-m); }
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-m);
+}
+
+.header-logo img { display: block; max-width: var(--logo-width); }
+.header-host { display: block; width: var(--host-logo-width); }
+
+.header-title { flex: 1; text-align: center; }
+
+/* Set like the 2026 and 2027 headers, whose name was an h1 and dates and
+   city were bold h2s: the heading font, at the framework's h1 and h2 sizes.
+   They are paragraphs here because each page's own title is its h1. */
+.header-title p {
+  margin: 0;
+  font-family: var(--font-heading);
+  color: #222;
+}
+
+.site-name { font-size: 30px; font-weight: normal; }
+.site-name a,
+.site-name a:visited { color: var(--color-heading); text-decoration: none; }
+
+.site-when,
+.site-where { margin-top: 0.25em; font-size: 24px; font-weight: bold; }
+
+/* The jump to the menu, for phones only. */
+.menu-link { display: none; }
+
+@media screen and (max-width: 48em) {
+  #header { padding: var(--space-s); }
+
+  .header-row { flex-direction: column; gap: var(--space-s); }
+
+  .header-logo img { max-width: 160px; }
+  .header-host { width: 140px; }
+
+  .site-name { font-size: 22px; }
+  .site-when,
+  .site-where { font-size: 18px; }
+
+  .menu-link {
+    display: block;
+    margin-top: var(--space-s);
+    padding: 0.4em;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    background: var(--color-active);
+    text-decoration: none;
+  }
+  .menu-link:visited { color: #fff; }
+}

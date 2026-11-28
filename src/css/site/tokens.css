@@ -1,0 +1,30 @@
+/* Shared values: colours and sizes. Change them here, not in the
+   component files.
+
+   The colours repeat the ones hard-coded in ../yaml/, so the site's own
+   components match the framework.
+
+   Breakpoint: the phone layout applies below 48em (768px at the default font
+   size). Custom properties can't be used in media queries, so each component
+   file writes "max-width: 48em" itself. */
+
+:root {
+  --color-page-background: #901a1e;   /* the red around the page */
+  --color-heading: rgb(204, 0, 0);    /* site name and page headings */
+  --color-text: #444;
+  --color-border: #ddd;
+  --color-active: #800;               /* current menu item */
+  --color-hover: #a88;                /* menu item under the pointer */
+  --color-overlay: rgba(0, 0, 0, 0.7);
+  --color-overlay-strong: rgba(0, 0, 0, 0.9);
+
+  /* The framework's font stacks, from ../yaml/content.css. */
+  --font-body: "Open Sans", Arial, Helvetica, sans-serif;
+  --font-heading: "Droid Serif", "Times New Roman", Times, serif;
+
+  --space-s: 10px;
+  --space-m: 20px;
+
+  --logo-width: 220px;
+  --host-logo-width: 210px;
+}
