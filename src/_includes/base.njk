@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- if key == "index" %}
+  <title>{{ site.name }} - {{ site.dates }} - {{ site.city }}, {{ site.country }}</title>
+  {%- else %}
+  <title>{{ title }} - {{ site.short_name }}, {{ site.city }}</title>
+  {%- endif %}
+  <meta name="description" content="{{ description or site.description }}">
+  {%- if site.favicon %}
+  <link rel="icon" href="images/{{ site.favicon }}">
+  {%- endif %}
+  <link rel="author" href="humans.txt">
+  {#- Stylesheets, in order: fonts, the YAML framework, then this site's own
+      components, which override the framework. A new component file in
+      src/css/site/ is added here. #}
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/yaml/layout.css">
+  <link rel="stylesheet" href="css/site/tokens.css">
+  <link rel="stylesheet" href="css/site/frame.css">
+  <link rel="stylesheet" href="css/site/header.css">
+  <link rel="stylesheet" href="css/site/content.css">
+  <link rel="stylesheet" href="css/site/cover.css">
+  <link rel="stylesheet" href="css/site/back-to-top.css">
+</head>
+<body id="top">
+  <div class="page_margins schatten">
+    <div class="page">
+      {% include "partials/header.njk" %}
+      <div id="main">
+        <nav id="col1" aria-label="Site menu">
+          <div id="col1_content" class="clearfix">
+            {% include "partials/menu.njk" %}
+          </div>
+        </nav>
+        <main id="col3">
+          <div id="col3_content" class="clearfix">
+            {{ content | safe }}
+            {%- if site.cmt_acknowledgement %}
+            <p class="cmt-acknowledgement">{{ site.cmt_acknowledgement }}</p>
+            {%- endif %}
+          </div>
+          <div id="ie_clearing">&#160;</div>
+        </main>
+      </div>
+    </div>
+  </div>
+  <a id="return-to-top" href="#top" aria-label="Back to top">&uarr;</a>
+</body>
+</html>

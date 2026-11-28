@@ -1,0 +1,4 @@
+# Eleventy
+node_modules/
+_site/
+.npm-cache/

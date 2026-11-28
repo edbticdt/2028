@@ -1,0 +1,40 @@
+# Edition settings. The next edition's team changes this file, not the templates.
+year: 2028
+name: EDBT/ICDT 2028 Joint Conference
+short_name: EDBT/ICDT 2028
+city: Aarhus
+country: Denmark
+dates: To be announced
+description: >-
+  The 2028 EDBT/ICDT Joint Conference, held in Aarhus, Denmark.
+
+# Header logos, paths under src/images/. Leave empty for none.
+logo: logos/edbt-icdt-aarhus-2028.svg   # left: the conference logo
+host_logo: ""          # right: the host institution
+favicon: ""
+
+# Shown under the page content when the reviewing runs on Microsoft CMT,
+# whose free service asks conferences to acknowledge it. Empty for none.
+cmt_acknowledgement: ""
+
+# The cover photo at the top of the home page, in two widths under
+# src/images/, and its credit. The credit is shown under the photo and listed
+# in humans.txt.
+cover:
+  image: cover/building-hallway-1600.jpg
+  image_small: cover/building-hallway-800.jpg
+  width: 1600
+  height: 1067
+  alt: A building hallway
+  photographer: Matt Morelli
+  photographer_url: https://unsplash.com/@mattfmo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+  source: Unsplash
+  source_url: https://unsplash.com/photos/building-hallway-L2aGwPIkX_Q?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+  licence: Unsplash License
+  licence_url: https://unsplash.com/license
+
+# For humans.txt. The people who make the site, each as
+#   - { name: ..., role: ..., site: https://... }
+# and who holds the copyright on the site's text.
+team: []
+copyright_holder: The EDBT/ICDT 2028 organisers

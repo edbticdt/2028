@@ -1,0 +1,16 @@
+<header id="header">
+  <div class="header-row">
+    {%- if site.logo %}
+    <a class="header-logo" href="index.html"><img src="images/{{ site.logo }}" alt="{{ site.short_name }} logo"></a>
+    {%- endif %}
+    <div class="header-title">
+      <p class="site-name"><a href="index.html">{{ site.name }}</a></p>
+      <p class="site-when">{{ site.dates }}</p>
+      <p class="site-where">{{ site.city }}, {{ site.country }}</p>
+    </div>
+    {%- if site.host_logo %}
+    <img class="header-host" src="images/{{ site.host_logo }}" alt="Host institution logo">
+    {%- endif %}
+  </div>
+  <a class="menu-link" href="#col1">Menu &darr;</a>
+</header>

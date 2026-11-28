@@ -1,0 +1,54 @@
+# Where EDBT and ICDT were held, oldest first. The home page lists them, and
+# counts them to give this edition's number (30 previous: the 31st).
+#
+# Next edition: add this year's city at the end of "joint".
+
+# EDBT before it was joint with ICDT, 1988 to 2008. Venice twice: 1988, 1990.
+edbt_only:
+  - Venice
+  - Venice
+  - Vienna
+  - Cambridge
+  - Avignon
+  - Valencia
+  - Konstanz
+  - Prague
+  - Heraklion
+  - Munich
+  - Nantes
+
+# ICDT before it was joint with EDBT, 1986 to 2007.
+icdt_only:
+  - Rome
+  - Bruges
+  - Paris
+  - Berlin
+  - Prague
+  - Delphi
+  - Jerusalem
+  - London
+  - Siena
+  - Edinburgh
+  - Barcelona
+
+# Joint EDBT/ICDT conferences, every year since 2009.
+joint:
+  - St Petersburg
+  - Lausanne
+  - Uppsala
+  - Berlin
+  - Genoa
+  - Athens
+  - Brussels
+  - Bordeaux
+  - Venice
+  - Vienna
+  - Lisbon
+  - Copenhagen (virtual)
+  - Nicosia (virtual)
+  - Edinburgh (virtual)
+  - Ioannina
+  - Paestum
+  - Barcelona
+  - Tampere
+  - Lille
