@@ -1,0 +1,17 @@
+{#- Sponsor logos by tier, from src/_data/sponsors.yaml. -#}
+{%- set anySponsors = false %}
+{%- for tier in sponsors %}{% if tier.sponsors.length %}{% set anySponsors = true %}{% endif %}{% endfor %}
+{%- if anySponsors %}
+{%- for tier in sponsors %}
+{%- if tier.sponsors.length %}
+<h3>{{ tier.tier }}</h3>
+<ul class="sponsors">
+  {%- for s in tier.sponsors %}
+  <li><a href="{{ s.url }}"><img src="images/{{ s.logo }}" alt="{{ s.name }}"></a></li>
+  {%- endfor %}
+</ul>
+{%- endif %}
+{%- endfor %}
+{%- else %}
+<p>Interested in supporting {{ site.short_name }}? See the <a href="sponsorship.html">sponsorship opportunities</a>.</p>
+{%- endif %}

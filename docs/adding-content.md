@@ -24,18 +24,21 @@ dates: 21st March - 24th March, 2028
 Every page is one Markdown file in `src/pages/`, published under the same
 name: `src/pages/venue.md` becomes `venue.html`.
 
-The pages today:
+The pages follow the 2027 menu. All but the home page and the calls page
+are placeholders so far:
 
-| File | Menu | State |
-| - | - | - |
-| `index.md` | Home | Cover photo, welcome, EDBT and ICDT history |
-| `venue.md` | Venue | Placeholder |
-| `travel.md` | Travel | Placeholder |
-| `accommodation.md` | Accommodation | Placeholder |
-| `important-dates.md` | Important Dates | Placeholder |
-| `edbt-call-for-papers.md` | EDBT Call for Papers | Placeholder |
-| `icdt-call-for-papers.md` | ICDT Call for Papers | Placeholder |
-| `organisers.md` | Conference Officers | Placeholder |
+| Menu group | Pages |
+| - | - |
+| General Information | `index.md` (home), `news.md`, `venue.md`, `travel.md`, `accommodation.md` |
+| Program | `invited-keynotes.md`, `invited-icdt-lecture.md`, `accepted-papers.md` |
+| Co-located Events | `workshops.md`, `young-researcher-symposium.md` |
+| Diversity, Equity and Inclusion (DEI) | `dei-statement.md`, `dei-in-writing.md` |
+| Calls | `important-dates.md`, `calls.md`, `scientific-misconduct.md`, `edbt-reviewer-guidelines.md` |
+| Organization | `conference-officers.md`, `edbt-committees.md`, `icdt-committee.md` |
+| Sponsorship | `sponsorship.md` |
+
+`edbt-call-for-papers.md` and `icdt-call-for-papers.md` are not in the
+menu: the calls page links to them.
 
 A placeholder page has its title and one line saying the content will be
 announced. To fill one in, replace that line.
@@ -164,15 +167,57 @@ and the credit, shown under the photo and in `humans.txt`. To replace it:
 ### The logos
 
 `logo` in `site.yaml` is the conference logo, on the left of the header;
-`host_logo` the host institution's, on the right; `favicon` the small icon
-in the browser tab. Each is a path under `src/images/`, and appears only
-when filled in. Use SVG where there is one. Keep the original files, such as
+`favicon` the small icon in the browser tab. Each is a path under
+`src/images/`.
+
+The right of the header is kept for the logo of the university hosting the
+conference. Until it is set, its place stays empty, so the conference name
+stays centred. To add it, upload the logo to `src/images/logos/` and fill in
+three lines in `site.yaml`:
+
+```yaml
+host_logo: logos/host-university.svg
+host_name: Name of the University
+host_url: https://www.example.edu
+```
+
+`host_name` is read out to readers who can't see the logo; with `host_url`,
+the logo links to the university. Use SVG where there is one. Keep the original files, such as
 a PDF, in `archive/logo/`, which is never published.
 
 ## PDFs and other files
 
 Put them in `src/resources/` (create the folder the first time), and link to
 them as `resources/<name>.pdf`.
+
+## News
+
+`src/_data/news.yaml`, newest first. The home page shows the five latest;
+the News page shows all. Add an item at the top:
+
+```yaml
+- date: January, 2027
+  text: The [EDBT 2028 Call for Papers](edbt-call-for-papers.html) is online.
+```
+
+The text is plain, with links in Markdown.
+
+## Sponsors
+
+`src/_data/sponsors.yaml`, one block per tier, in the order shown under "We
+thank our Sponsors" on the home page. Put the logo in `src/images/sponsors/`
+(SVG or PNG, see Images), then add the sponsor under its tier:
+
+```yaml
+- tier: Gold Sponsors
+  sponsors:
+    - name: Example Corp
+      url: https://example.com
+      logo: sponsors/example.svg
+```
+
+A tier with no sponsors isn't shown. With none at all, the home page points
+to the sponsorship page instead.
 
 ## Past venues
 

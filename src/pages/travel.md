@@ -1,6 +1,6 @@
 ---
 title: Travel Information
-menu_label: Travel
+menu_label: Travel Information
 description: How to get to Aarhus for EDBT/ICDT 2028.
 ---
 

@@ -1,0 +1,9 @@
+# News, newest first. The home page shows the first five; news.html shows all.
+#
+# Each item has a date, as shown ("November, 2026"), and a text. The text may
+# link to a page of this site or another site, in Markdown:
+#   - date: January, 2027
+#     text: The [EDBT 2028 Call for Papers](edbt-call-for-papers.html) is online.
+
+- date: November, 2026
+  text: Launch of the EDBT/ICDT 2028 website.

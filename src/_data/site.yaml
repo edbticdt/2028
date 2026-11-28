@@ -8,10 +8,17 @@ dates: To be announced
 description: >-
   The 2028 EDBT/ICDT Joint Conference, held in Aarhus, Denmark.
 
-# Header logos, paths under src/images/. Leave empty for none.
+# Header logos, paths under src/images/.
 logo: logos/edbt-icdt-aarhus-2028.svg   # left: the conference logo
-host_logo: ""          # right: the host institution
 favicon: ""
+
+# Right of the header: the university hosting the conference. Until
+# host_logo is set, its place is kept empty, so the conference name stays
+# centred and nothing moves when the logo arrives. host_name is the logo's
+# alt text; with host_url, the logo links to the university.
+host_logo: logos/aarhus-university.png
+host_name: Aarhus University
+host_url: https://international.au.dk/
 
 # Shown under the page content when the reviewing runs on Microsoft CMT,
 # whose free service asks conferences to acknowledge it. Empty for none.

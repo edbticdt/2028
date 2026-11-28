@@ -11,7 +11,6 @@
 
 .cover figcaption {
   margin-top: 0.4em;
-  font-family: var(--font-heading);
   font-size: var(--text-sm);
   color: var(--color-muted);
   text-align: right;

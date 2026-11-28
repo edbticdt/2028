@@ -33,6 +33,20 @@ export default function (eleventyConfig) {
       : `${items.slice(0, -1).join(", ")} and ${items.at(-1)}`,
   );
 
+  // Escape a short text, then turn Markdown links, [text](url), into HTML
+  // links. For one-line texts in data files, such as news items.
+  eleventyConfig.addFilter("inlineLinks", (text) => {
+    const escaped = String(text)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;");
+    return escaped.replace(
+      /\[([^\]]+)\]\(([^)\s]+)\)/g,
+      (_, label, url) => `<a href="${url}">${label}</a>`,
+    );
+  });
+
   // Notes for maintainers next to the assets, never pages of the site.
   eleventyConfig.ignores.add("src/css/**/*.md");
   eleventyConfig.ignores.add("src/fonts/**/*.md");

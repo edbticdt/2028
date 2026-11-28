@@ -1,6 +1,6 @@
 ---
 title: Conference Venue
-menu_label: Venue
+menu_label: Conference Venue
 description: Where the EDBT/ICDT 2028 conference takes place in Aarhus.
 ---
 

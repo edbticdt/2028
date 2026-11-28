@@ -20,17 +20,17 @@
 
   /* Two roles, served by the site (../fonts.css), with system fallbacks
      while they load. These replace the framework's Open Sans and Droid Serif.
-     - text: Source Serif 4, for running text
-     - heading: Space Grotesk, for headings, the header, the menu, captions */
-  --font-text: "Source Serif 4", Georgia, "Times New Roman", serif;
-  --font-heading: "Space Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+     - body: Fira Sans, for running text, the menu, captions
+     - heading: Source Serif 4, for headings and the header, as the 2026 and
+       2027 sites used a serif there */
+  --font-body: "Fira Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-heading: "Source Serif 4", Georgia, "Times New Roman", serif;
 
-  /* Type scale: 16px running text (a serif reads best a little larger),
-     headings on a 1.2 ratio. In rem, so they follow the reader's browser
-     font size. */
-  --text-sm: 0.8125rem;    /* 13px: menu group titles, captions */
-  --text-ui: 0.9375rem;    /* 15px: menu entries */
-  --text-base: 1rem;       /* 16px: running text, h4 */
+  /* Type scale: 16px text, headings on a 1.2 ratio. In rem, so they follow
+     the reader's browser font size. */
+  --text-sm: 0.8125rem;    /* 13px: captions */
+  --text-ui: 0.9375rem;    /* 15px: menu entries and titles */
+  --text-base: 1rem;       /* 16px: running text */
   --text-lg: 1.1875rem;    /* 19px: h3 */
   --text-xl: 1.4375rem;    /* 23px: h2 */
   --text-2xl: 1.75rem;     /* 28px: h1 */
@@ -45,10 +45,15 @@
 
   --shadow-page: 0 6px 24px rgba(0, 0, 0, 0.35);
 
+  /* The widest the page gets: 1080px at the default font size, as on the
+     2026 and 2027 sites. */
+  --page-max-width: 67.5rem;
+
   --space-s: 10px;
   --space-m: 20px;
   --space-l: 30px;
 
   --logo-width: 220px;
-  --host-logo-width: 210px;
+  --host-logo-width: 220px;   /* same as --logo-width, so the title is centred */
+  --host-logo-scale: 68%;     /* the host logo's size within its slot, about 150px */
 }

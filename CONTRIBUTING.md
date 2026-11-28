@@ -34,6 +34,8 @@ about how to send the change.
 | Year, dates, city, logos, cover photo | `src/_data/site.yaml` |
 | The text of a page | its Markdown file in `src/pages/`, such as `src/pages/venue.md` |
 | The menu | `src/_data/menu.yaml` |
+| News, on the home page and the News page | `src/_data/news.yaml` |
+| Sponsor logos on the home page | `src/_data/sponsors.yaml`, logos in `src/images/sponsors/` |
 | Past venues (the edition numbers are counted from them) | `src/_data/history.yaml` |
 | Images, logos, the cover photo | `src/images/` |
 | Team and copyrights in `humans.txt` | `team` and `copyright_holder` in `src/_data/site.yaml` |

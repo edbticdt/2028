@@ -1,16 +1,15 @@
 ---
 title: Home
-menu_label: Home
+menu_label: EDBT/ICDT 2028
 description: The 2028 EDBT/ICDT Joint Conference, held in Aarhus, Denmark.
 ---
 
 {%- set edbtPrevious = history.edbt_only.concat(history.joint) -%}
 {%- set icdtPrevious = history.icdt_only.concat(history.joint) -%}
 
-{% include "partials/cover.njk" %}
+<p class="welcome">Welcome to the home of the {{ site.year }} EDBT/ICDT Joint Conference, to be held in {{ site.city }}, {{ site.country }}{% if site.dates != "To be announced" %}, on {{ site.dates }}{% else %}. Dates to be announced{% endif %}.</p>
 
-Welcome to the home of the {{ site.year }} EDBT/ICDT Joint Conference, to be
-held in {{ site.city }}, {{ site.country }}. Dates: {{ site.dates | lower }}.
+{% include "partials/cover.njk" %}
 
 ## EDBT: {{ (edbtPrevious.length + 1) | ordinal }} International Conference on Extending Database Technology
 
@@ -31,3 +30,14 @@ The previous ICDT conferences were held in {{ icdtPrevious | listJoin }}.
 
 Since 2009, ICDT has been held every year jointly with EDBT, following the
 successful SIGMOD/PODS model.
+
+<h2 id="sponsors">We thank our Sponsors</h2>
+
+{% include "partials/sponsors.njk" %}
+
+<h2 id="news">News</h2>
+
+{% set newsLimit = 5 %}
+{% include "partials/news.njk" %}
+
+<p><a href="news.html">All news</a></p>

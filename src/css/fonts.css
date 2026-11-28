@@ -3,44 +3,75 @@
    breaches the GDPR when the visitor hasn't agreed. See docs/design.md, "Fonts".
 
    Two roles:
-   - Space Grotesk, for headings, the header, the menu and captions: a
-     geometric grotesk drawn from a monospace. Variable, weights 300 to 700.
-     Licence: SIL OFL 1.1, fonts/OFL-space-grotesk.txt.
-   - Source Serif 4, for running text: a scholarly serif with optical sizes,
-     which the browser picks from the text size. Variable, weights 200 to
-     900, upright and italic. Licence: SIL OFL 1.1, fonts/OFL-source-serif-4.txt.
+   - Source Serif 4, for headings and the header: a scholarly serif with
+     optical sizes, which the browser picks from the text size. Variable,
+     weights 200 to 900, upright and italic.
+     Licence: SIL OFL 1.1, fonts/OFL-source-serif-4.txt.
+   - Fira Sans, for running text, the menu and captions: a humanist sans
+     designed by Erik Spiekermann for Mozilla. Weights 400, 600 and 700,
+     and a true 400 italic. Licence: SIL OFL 1.1, fonts/OFL-fira-sans.txt.
 
    Each is split by alphabet, and a browser downloads only the files whose
    unicode-range holds characters on the page. Paths are relative to this
    file, in css/. */
 
-/* Space Grotesk, normal, 300 700, vietnamese */
+/* Source Serif 4, italic, 200 900, cyrillic-ext */
 @font-face {
-  font-family: "Space Grotesk";
-  font-style: normal;
-  font-weight: 300 700;
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 200 900;
   font-display: swap;
-  src: url("../fonts/space-grotesk-vietnamese.woff2") format("woff2");
+  src: url("../fonts/source-serif-4-italic-cyrillic-ext.woff2") format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* Source Serif 4, italic, 200 900, cyrillic */
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("../fonts/source-serif-4-italic-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* Source Serif 4, italic, 200 900, greek */
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("../fonts/source-serif-4-italic-greek.woff2") format("woff2");
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+/* Source Serif 4, italic, 200 900, vietnamese */
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("../fonts/source-serif-4-italic-vietnamese.woff2") format("woff2");
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
 }
 
-/* Space Grotesk, normal, 300 700, latin-ext */
+/* Source Serif 4, italic, 200 900, latin-ext */
 @font-face {
-  font-family: "Space Grotesk";
-  font-style: normal;
-  font-weight: 300 700;
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 200 900;
   font-display: swap;
-  src: url("../fonts/space-grotesk-latin-ext.woff2") format("woff2");
+  src: url("../fonts/source-serif-4-italic-latin-ext.woff2") format("woff2");
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
-/* Space Grotesk, normal, 300 700, latin */
+/* Source Serif 4, italic, 200 900, latin */
 @font-face {
-  font-family: "Space Grotesk";
-  font-style: normal;
-  font-weight: 300 700;
+  font-family: "Source Serif 4";
+  font-style: italic;
+  font-weight: 200 900;
   font-display: swap;
-  src: url("../fonts/space-grotesk-latin.woff2") format("woff2");
+  src: url("../fonts/source-serif-4-italic-latin.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -104,62 +135,282 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Source Serif 4, italic, 200 900, cyrillic-ext */
+/* Fira Sans, normal, 400, cyrillic-ext */
 @font-face {
-  font-family: "Source Serif 4";
-  font-style: italic;
-  font-weight: 200 900;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
-  src: url("../fonts/source-serif-4-italic-cyrillic-ext.woff2") format("woff2");
+  src: url("../fonts/fira-sans-400-cyrillic-ext.woff2") format("woff2");
   unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
 
-/* Source Serif 4, italic, 200 900, cyrillic */
+/* Fira Sans, normal, 400, cyrillic */
 @font-face {
-  font-family: "Source Serif 4";
-  font-style: italic;
-  font-weight: 200 900;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
-  src: url("../fonts/source-serif-4-italic-cyrillic.woff2") format("woff2");
+  src: url("../fonts/fira-sans-400-cyrillic.woff2") format("woff2");
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
-/* Source Serif 4, italic, 200 900, greek */
+/* Fira Sans, normal, 400, greek-ext */
 @font-face {
-  font-family: "Source Serif 4";
-  font-style: italic;
-  font-weight: 200 900;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
-  src: url("../fonts/source-serif-4-italic-greek.woff2") format("woff2");
+  src: url("../fonts/fira-sans-400-greek-ext.woff2") format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+
+/* Fira Sans, normal, 400, greek */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/fira-sans-400-greek.woff2") format("woff2");
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
 
-/* Source Serif 4, italic, 200 900, vietnamese */
+/* Fira Sans, normal, 400, vietnamese */
 @font-face {
-  font-family: "Source Serif 4";
-  font-style: italic;
-  font-weight: 200 900;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
-  src: url("../fonts/source-serif-4-italic-vietnamese.woff2") format("woff2");
+  src: url("../fonts/fira-sans-400-vietnamese.woff2") format("woff2");
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
 }
 
-/* Source Serif 4, italic, 200 900, latin-ext */
+/* Fira Sans, normal, 400, latin-ext */
 @font-face {
-  font-family: "Source Serif 4";
-  font-style: italic;
-  font-weight: 200 900;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
-  src: url("../fonts/source-serif-4-italic-latin-ext.woff2") format("woff2");
+  src: url("../fonts/fira-sans-400-latin-ext.woff2") format("woff2");
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
-/* Source Serif 4, italic, 200 900, latin */
+/* Fira Sans, normal, 400, latin */
 @font-face {
-  font-family: "Source Serif 4";
-  font-style: italic;
-  font-weight: 200 900;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
   font-display: swap;
-  src: url("../fonts/source-serif-4-italic-latin.woff2") format("woff2");
+  src: url("../fonts/fira-sans-400-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Fira Sans, normal, 600, cyrillic-ext */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/fira-sans-600-cyrillic-ext.woff2") format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* Fira Sans, normal, 600, cyrillic */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/fira-sans-600-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* Fira Sans, normal, 600, greek-ext */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/fira-sans-600-greek-ext.woff2") format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+
+/* Fira Sans, normal, 600, greek */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/fira-sans-600-greek.woff2") format("woff2");
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+/* Fira Sans, normal, 600, vietnamese */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/fira-sans-600-vietnamese.woff2") format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+
+/* Fira Sans, normal, 600, latin-ext */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/fira-sans-600-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Fira Sans, normal, 600, latin */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/fira-sans-600-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Fira Sans, normal, 700, cyrillic-ext */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/fira-sans-700-cyrillic-ext.woff2") format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* Fira Sans, normal, 700, cyrillic */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/fira-sans-700-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* Fira Sans, normal, 700, greek-ext */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/fira-sans-700-greek-ext.woff2") format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+
+/* Fira Sans, normal, 700, greek */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/fira-sans-700-greek.woff2") format("woff2");
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+/* Fira Sans, normal, 700, vietnamese */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/fira-sans-700-vietnamese.woff2") format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+
+/* Fira Sans, normal, 700, latin-ext */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/fira-sans-700-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Fira Sans, normal, 700, latin */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/fira-sans-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Fira Sans, italic, 400, cyrillic-ext */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/fira-sans-400-italic-cyrillic-ext.woff2") format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* Fira Sans, italic, 400, cyrillic */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/fira-sans-400-italic-cyrillic.woff2") format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* Fira Sans, italic, 400, greek-ext */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/fira-sans-400-italic-greek-ext.woff2") format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+
+/* Fira Sans, italic, 400, greek */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/fira-sans-400-italic-greek.woff2") format("woff2");
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+/* Fira Sans, italic, 400, vietnamese */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/fira-sans-400-italic-vietnamese.woff2") format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+
+/* Fira Sans, italic, 400, latin-ext */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/fira-sans-400-italic-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* Fira Sans, italic, 400, latin */
+@font-face {
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/fira-sans-400-italic-latin.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
