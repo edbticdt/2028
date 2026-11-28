@@ -2,6 +2,12 @@
    menu column and the content column. ../yaml/basemod.css sets the desktop
    layout; this file adds the phone layout on top. */
 
+/* Desktop: a softer page shadow, a lighter divider between the columns,
+   more room around the text. */
+.schatten { box-shadow: var(--shadow-page); }
+#col3 { border-left-color: var(--color-rule); }
+#col3_content { padding: 0 var(--space-l) var(--space-m) var(--space-l); }
+
 /* Phones: one column, content first, menu after it. A "Menu" link at the
    top of the page jumps to the menu (see header.css), so no script is needed
    to open and close it. */

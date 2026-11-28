@@ -20,9 +20,11 @@ All in `src/css/`, linked in this order by `src/_includes/base.njk`:
 | `fonts.css` | The `@font-face` rules for the local fonts | Only to add or change a font |
 | `yaml/layout.css` | The YAML framework 3.3, which imports `base.css`, `nav_vlist.css`, `basemod.css`, `content.css` and `print_draft.css` | **Never**: CC-BY 2.0, kept as the 2026 and 2027 sites had it |
 | `site/tokens.css` | Colours and sizes, as custom properties | Yes, to retune the look |
+| `site/typography.css` | Text size, line height, headings and links in the content column | Yes |
 | `site/frame.css` | The page frame, and the phone layout | Yes |
 | `site/header.css` | The header and the phone "Menu" link | Yes |
-| `site/content.css` | Headings, images, tables, notes in the content column | Yes |
+| `site/menu.css` | The menu's group titles, dividers and spacing, on top of the framework's | Yes |
+| `site/content.css` | Images, tables and notes in the content column | Yes |
 | `site/cover.css` | The cover photo on the home page and its credit | Yes |
 | `site/back-to-top.css` | The back-to-top button | Yes |
 
@@ -47,8 +49,14 @@ In `src/css/site/tokens.css`:
 | `--color-active` | `#800` | Current menu item, the phone "Menu" link |
 | `--color-hover` | `#a88` | Menu item under the pointer |
 | `--color-overlay`, `--color-overlay-strong` | black at 70% and 90% | The back-to-top button |
-| `--font-body`, `--font-heading` | Open Sans, Droid Serif, with fallbacks | The framework's two font stacks |
-| `--space-s`, `--space-m` | `10px`, `20px` | Padding and gaps |
+| `--font-text`, `--font-heading` | Source Serif 4, Space Grotesk, with fallbacks | Running text; headings, header, menu, captions |
+| `--text-sm` to `--text-2xl` | 13, 15, 16, 19, 23, 28px, in rem | The type scale; see Typography |
+| `--leading`, `--leading-tight` | `1.6`, `1.2` | Line height of text and of headings |
+| `--measure` | `70ch` | Longest line of running text |
+| `--color-muted`, `--color-rule` | `#666`, `#eee` | Captions and menu titles; light dividers |
+| `--color-link`, `--color-link-hover` | `#990000`, `#660000` | Links in the content |
+| `--shadow-page` | soft, black at 35% | The shadow under the page |
+| `--space-s`, `--space-m`, `--space-l` | `10px`, `20px`, `30px` | Padding and gaps |
 | `--logo-width`, `--host-logo-width` | `220px`, `210px` | Header logos on desktop |
 
 The framework files hard-code the same colours; `tokens.css` repeats them so
@@ -68,11 +76,41 @@ JavaScript.
 
 ### Typography
 
-- **Open Sans** for body text, weights 300 to 800 from one variable font.
-- **Droid Serif** for headings, and for the conference name, dates and city
-  in the header, as on the 2026 and 2027 sites. Only the regular weight
-  exists; bold text in it is drawn bold by the browser, as it was there.
-- Arial, from the framework, for the menu group titles.
+Two fonts, each with one role: the pairing is meant to say *technology on
+solid theory*.
+
+- **Space Grotesk** for headings, the conference name, dates and city in the
+  header, the menu and captions: a geometric grotesk drawn from a monospace,
+  with engineered details. Variable, weights 300 to 700. Headings and the
+  conference name are semibold (600), the header's dates and city medium
+  (500).
+- **Source Serif 4** for running text: a scholarly serif, set like a
+  well-typeset paper. Variable, weights 200 to 900, upright and italic, with
+  optical sizes the browser picks from the text size.
+
+The site used Open Sans and Droid Serif until November 2026, as the 2026 and
+2027 sites did, then briefly IBM Plex, which read as too anonymous. The
+fallbacks while the fonts load are Georgia for text and the system's own
+sans for headings.
+
+The scale, in `tokens.css` and applied by `site/typography.css`. The
+framework sets 12px text; the site overrides it with 16px, on a 1.2 ratio.
+
+| Use | Token | Size |
+| - | - | - |
+| Menu group titles, captions (Space Grotesk) | `--text-sm` | 13px |
+| Menu entries (Space Grotesk) | `--text-ui` | 15px |
+| Running text (Source Serif 4), `h4` | `--text-base` | 16px |
+| `h3` (dark grey) | `--text-lg` | 19px |
+| `h2` (red) | `--text-xl` | 23px, 20px on phones |
+| `h1` (red) | `--text-2xl` | 28px, 24px on phones |
+
+Sizes are in `rem`, so they follow the reader's browser font size. Body text
+has line height 1.6, headings 1.2. Paragraphs and lists stop at about 70
+characters per line (`--measure`), however wide the screen.
+
+Links in the content are red with a thin underline. Menu group titles are
+small capitals in Space Grotesk, with spacing between the letters.
 
 ### Fonts
 
@@ -85,17 +123,20 @@ sites loaded both fonts from Google; this one does not.
 
 | File | Font | Licence |
 | - | - | - |
-| `open-sans-<alphabet>.woff2` | Open Sans, variable, weights 300 to 800, split into latin, latin-ext, greek, greek-ext, cyrillic, cyrillic-ext, vietnamese, hebrew, math, symbols | SIL OFL 1.1, `OFL-open-sans.txt` |
-| `droid-serif-latin.woff2` | Droid Serif, regular, latin | Apache 2.0, `LICENSE-droid-serif.txt` |
+| `space-grotesk-<alphabet>.woff2` | Space Grotesk, variable 300 to 700 | SIL OFL 1.1, `OFL-space-grotesk.txt` |
+| `source-serif-4-<alphabet>.woff2` | Source Serif 4, upright, variable 200 to 900, optical sizes | SIL OFL 1.1, `OFL-source-serif-4.txt` |
+| `source-serif-4-italic-<alphabet>.woff2` | Source Serif 4, italic, same axes | same |
 
-The browser downloads only the files whose `unicode-range` covers characters
-on the page: usually `open-sans-latin` and `droid-serif-latin`, plus
-`latin-ext` or `greek` for author names that need them. The licence files are
-published next to the fonts, as both licences ask.
+Space Grotesk covers latin, latin-ext and vietnamese; Source Serif 4 also
+greek, cyrillic and cyrillic-ext, for author names that need them. The
+browser downloads only the files whose `unicode-range` covers characters on
+the page: a typical page loads Source Serif latin (119 KB) and Space
+Grotesk latin (21 KB); the italic (126 KB) only where italics appear. The
+licence files are published next to the fonts, as the licences ask.
 
-The files were downloaded once, in November 2026, from the URLs the 2027
-site's Google Fonts stylesheets used (Open Sans v40, Droid Serif v19).
-Google no longer lists Droid Serif; its successor is Noto Serif.
+The files were downloaded once, in November 2026, from Google Fonts' servers
+(the variable versions of both), and the licences from the google/fonts
+repository.
 
 To add a font or a weight: download its `.woff2` files once, put them and
 the licence in `src/fonts/`, and add an `@font-face` rule to `fonts.css`
@@ -125,13 +166,15 @@ changed.
 - Markup: `src/_includes/partials/menu.njk`, rendered from
   `src/_data/menu.yaml`.
 - Styles: `yaml/nav_vlist.css`, the framework's vertical list: group titles
-  are `h6.vlist`, the current page is `li.active`.
+  are `h6.vlist`, the current page is `li.active`. `site/menu.css` lightens
+  the titles and dividers.
 
 ### Content
 
 - Markup: each page in `src/pages/`.
-- Styles: `yaml/content.css` for the basics, `site/content.css` for headings,
-  images, tables on phones and the CMT acknowledgement.
+- Styles: `yaml/content.css` for the basics, `site/typography.css` for text
+  size, headings and links, `site/content.css` for images, tables and the CMT
+  acknowledgement.
 
 ### Cover photo
 

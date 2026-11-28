@@ -1,17 +1,22 @@
-/* The content column: headings, images, tables, notes. */
-
-#col3_content h1,
-#col3_content h2 { font-weight: bold; color: var(--color-heading); }
+/* The content column: images, tables, notes. Headings and links are in
+   typography.css. */
 
 /* Images never overflow the column. */
 #col3_content img { max-width: 100%; height: auto; }
 
-.cmt-acknowledgement { margin-top: 2em; font-style: italic; }
+.cmt-acknowledgement { margin-top: 2em; font-style: italic; color: var(--color-muted); }
+
+/* Tables: padded cells, light rules. */
+#col3_content table { border-collapse: collapse; margin: 0 0 1.5em; }
+#col3_content th,
+#col3_content td {
+  padding: 0.5em 0.75em;
+  vertical-align: top;
+  border-bottom: 1px solid var(--color-rule);
+}
+#col3_content th { text-align: left; font-weight: 600; }
 
 @media screen and (max-width: 48em) {
-  #col3_content h1 { font-size: 1.6em; }
-  #col3_content h2 { font-size: 1.3em; }
-
   /* Wide tables (accepted papers, the program) scroll sideways instead of
      widening the page. */
   #col3_content table {

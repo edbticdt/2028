@@ -1,0 +1,70 @@
+/* Type: sizes, line heights and link style, on top of ../yaml/content.css,
+   which sets 12px text with fixed line heights. Sizes come from tokens.css. */
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--text-base);
+  line-height: var(--leading);
+}
+
+/* Every heading in the heading font; the framework names Droid Serif. */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
+
+/* The framework fixes line heights in em on each element; unitless here, so
+   they scale with the text. */
+p, li, dl, pre { line-height: var(--leading); }
+
+/* Running text stays readable on wide screens. */
+#col3_content p,
+#col3_content ul,
+#col3_content ol,
+#col3_content dl,
+#col3_content blockquote { max-width: var(--measure); }
+
+/* Headings in the content column: Space Grotesk semibold. */
+#col3_content h1,
+#col3_content h2,
+#col3_content h3,
+#col3_content h4 {
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  color: var(--color-heading);
+}
+
+#col3_content h1 {
+  font-size: var(--text-2xl);
+  margin: 0.2em 0 0.6em;
+  letter-spacing: -0.02em;
+}
+
+#col3_content h2 {
+  font-size: var(--text-xl);
+  margin: 1.6em 0 0.5em;
+}
+
+#col3_content h3 {
+  font-size: var(--text-lg);
+  margin: 1.4em 0 0.4em;
+  color: #222;
+}
+
+#col3_content h4 {
+  font-size: var(--text-base);
+  margin: 1.2em 0 0.3em;
+  color: #222;
+}
+
+/* Links: a thin underline, so they read as links without the colour alone. */
+#col3_content a {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+#col3_content a:visited { color: var(--color-link); }
+#col3_content a:hover { color: var(--color-link-hover); }
+
+@media screen and (max-width: 48em) {
+  #col3_content h1 { font-size: 1.5rem; }
+  #col3_content h2 { font-size: 1.25rem; }
+}
