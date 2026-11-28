@@ -60,7 +60,7 @@ In `src/css/site/tokens.css`:
 | `--shadow-page` | soft, black at 35% | The shadow under the page |
 | `--space-s`, `--space-m`, `--space-l` | `10px`, `20px`, `30px` | Padding and gaps |
 | `--page-max-width` | `67.5rem` (1080px) | The widest the page gets, as on the 2026 and 2027 sites |
-| `--logo-width`, `--host-logo-width` | `220px`, `210px` | Header logos on desktop |
+| `--logo-width`, `--host-logo-width` | `220px`, `220px` | The two header logo slots on desktop |
 
 The framework files hard-code the same colours; `tokens.css` repeats them so
 the site's own components match. Changing a token changes the site's
@@ -163,8 +163,12 @@ changed.
 
 - Markup: `src/_includes/partials/header.njk`.
 - Styles: `site/header.css`.
-- Data: name, dates, city, logos from `src/_data/site.yaml`. A logo appears
-  only when its setting is filled in.
+- Data: name, dates, city, logos from `src/_data/site.yaml`.
+- The conference logo on the left and the host university's on the right
+  have slots of the same width (`--logo-width`, `--host-logo-width`, both
+  220px), so the title is centred. The host slot is kept, empty, until
+  `host_logo` is set; on phones, where the header stacks, an empty slot is
+  hidden.
 
 ### Menu
 

@@ -167,9 +167,22 @@ and the credit, shown under the photo and in `humans.txt`. To replace it:
 ### The logos
 
 `logo` in `site.yaml` is the conference logo, on the left of the header;
-`host_logo` the host institution's, on the right; `favicon` the small icon
-in the browser tab. Each is a path under `src/images/`, and appears only
-when filled in. Use SVG where there is one. Keep the original files, such as
+`favicon` the small icon in the browser tab. Each is a path under
+`src/images/`.
+
+The right of the header is kept for the logo of the university hosting the
+conference. Until it is set, its place stays empty, so the conference name
+stays centred. To add it, upload the logo to `src/images/logos/` and fill in
+three lines in `site.yaml`:
+
+```yaml
+host_logo: logos/host-university.svg
+host_name: Name of the University
+host_url: https://www.example.edu
+```
+
+`host_name` is read out to readers who can't see the logo; with `host_url`,
+the logo links to the university. Use SVG where there is one. Keep the original files, such as
 a PDF, in `archive/logo/`, which is never published.
 
 ## PDFs and other files
