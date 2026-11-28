@@ -2,7 +2,7 @@
    which sets 12px text with fixed line heights. Sizes come from tokens.css. */
 
 body {
-  font-family: var(--font-text);
+  font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: var(--leading);
 }
@@ -21,7 +21,7 @@ p, li, dl, pre { line-height: var(--leading); }
 #col3_content dl,
 #col3_content blockquote { max-width: var(--measure); }
 
-/* Headings in the content column: Space Grotesk semibold. */
+/* Headings in the content column: Source Serif 4 semibold. */
 #col3_content h1,
 #col3_content h2,
 #col3_content h3,
@@ -34,7 +34,6 @@ p, li, dl, pre { line-height: var(--leading); }
 #col3_content h1 {
   font-size: var(--text-2xl);
   margin: 0.2em 0 0.6em;
-  letter-spacing: -0.02em;
 }
 
 #col3_content h2 {

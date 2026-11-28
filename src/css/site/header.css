@@ -48,7 +48,6 @@
 
   .menu-link {
     display: block;
-    font-family: var(--font-heading);
     margin-top: var(--space-s);
     padding: 0.4em;
     text-align: center;
