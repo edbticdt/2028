@@ -1,0 +1,31 @@
+/* The menu, on top of ../yaml/nav_vlist.css: lighter group titles and
+   dividers, a little more room per entry. */
+
+/* The whole menu in the heading font, a size below the text. */
+.vlist,
+h6.vlist { font-family: var(--font-heading); }
+.vlist { font-size: var(--text-ui); }
+
+/* Group titles: small spaced capitals, instead of bold Arial on a heavy
+   rule. */
+h6.vlist {
+  padding: 1.2em 0 0.4em 10%;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  border-top: 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.vlist { margin-bottom: 0.5em; border-bottom: 0; }
+
+.vlist a,
+.vlist li span {
+  padding-top: 0.45em;
+  padding-bottom: 0.45em;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.vlist a { transition: background-color 0.15s ease, color 0.15s ease; }
