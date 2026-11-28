@@ -55,5 +55,5 @@
 
   --logo-width: 220px;
   --host-logo-width: 220px;   /* same as --logo-width, so the title is centred */
-  --host-logo-scale: 80%;     /* the host logo's size within its slot */
+  --host-logo-scale: 68%;     /* the host logo's size within its slot, about 150px */
 }
