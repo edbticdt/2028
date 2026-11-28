@@ -1,0 +1,40 @@
+# Makes a release when a version tag is pushed, such as v1.0.0: builds the
+# site, packs it as plain, readable HTML (tools/package-release.mjs), and
+# attaches the zip to a GitHub Release named after the tag.
+#
+# The release is created with the repository's own token, by the workflow;
+# nobody runs a release command by hand.
+name: Release
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Pack the site as plain HTML
+        run: npm run package -- "$GITHUB_REF_NAME"
+
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >
+          gh release create "$GITHUB_REF_NAME"
+          "dist/edbticdt-2028-site-$GITHUB_REF_NAME.zip"
+          --title "EDBT/ICDT 2028 website $GITHUB_REF_NAME"
+          --generate-notes
+          --verify-tag
